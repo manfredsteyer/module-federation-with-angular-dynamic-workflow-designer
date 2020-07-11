@@ -1,0 +1,19 @@
+<ul>
+    <li><img src="../assets/angular.png" width="50"></li>
+    <li><a href="#">Plugin-based Workflow Designer</a></li>
+    <li><a (click)="toggle()">Toggle Config</a></li>
+</ul>
+
+<div class="vertical-menu">
+    <a href="#" class="active">Tasks</a>
+    <a *ngFor="let p of plugins" (click)="add(p)">Add {{p.displayName}}</a>
+</div>
+
+<ng-container *ngFor="let p of workflow; let last = last">
+    <plugin-proxy [options]="p"></plugin-proxy>
+    <i *ngIf="!last" class="arrow right" style=""></i>
+</ng-container> 
+
+<p style="clear:both">&nbsp;</p>
+<p>&nbsp;</p>
+<app-config *ngIf="showConfig"></app-config>
