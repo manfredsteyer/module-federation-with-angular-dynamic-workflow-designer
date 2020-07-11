@@ -2,6 +2,8 @@
 
 Demonstrates webpack 5 Module Federation with Angular and the Angular Router.
 
+![Workflow Designer](./result.png)
+
 ## Start
 
 - ``npm run build``
