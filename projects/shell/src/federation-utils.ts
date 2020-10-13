@@ -34,11 +34,11 @@ async function lookupExposedModule<T>(remoteName: string, exposedModule: string)
       return Module as T;
 }
 
-export type LoadRemoteModuleOptions = { 
-    remoteEntry: string; 
-    remoteName: string; 
+export type LoadRemoteModuleOptions = {
+    remoteEntry: string;
+    remoteName: string;
     exposedModule: string
-}
+};
 
 export async function loadRemoteModule<T = any>(options: LoadRemoteModuleOptions): Promise<T> {
     await loadRemoteEntry(options.remoteEntry);
