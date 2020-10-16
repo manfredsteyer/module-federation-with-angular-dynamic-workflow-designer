@@ -1,7 +1,10 @@
 const moduleMap = {};
 
 function loadRemoteEntry(remoteEntry: string): Promise<void> {
-    return new Promise<any>((resolve, reject) => {
+    if (moduleMap[remoteEntry]) {
+        return moduleMap[remoteEntry];
+    }
+    moduleMap[remoteEntry] = new Promise<any>((resolve, reject) => {
 
         if (moduleMap[remoteEntry]) {
             resolve();
@@ -14,12 +17,12 @@ function loadRemoteEntry(remoteEntry: string): Promise<void> {
         script.onerror = reject;
 
         script.onload = () => {
-            moduleMap[remoteEntry] = true;
             resolve(); // window is the global namespace
-        }
+        };
 
         document.body.append(script);
     });
+    return moduleMap[remoteEntry];
 }
 
 async function lookupExposedModule<T>(remoteName: string, exposedModule: string): Promise<T> {
