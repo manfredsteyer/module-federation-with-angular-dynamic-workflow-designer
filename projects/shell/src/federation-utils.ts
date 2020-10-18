@@ -40,6 +40,15 @@ export type LoadRemoteModuleOptions = {
     exposedModule: string
 };
 
+
+
+
+
+
+
+
+
+
 export async function loadRemoteModule<T = any>(options: LoadRemoteModuleOptions): Promise<T> {
     await loadRemoteEntry(options.remoteEntry);
     return await lookupExposedModule<T>(options.remoteName, options.exposedModule);
