@@ -4,10 +4,18 @@ Demonstrates webpack 5 Module Federation with Angular and the Angular Router.
 
 ![Workflow Designer](./result.png)
 
+## Prerequisite
+
+- ``npm install -g yarn``
+
+## Install
+
+- ``yarn install``
+
 ## Start
 
 - ``npm run build``
-- ``npm run serve:dist``
+- ``npm run start``
 - Navigate to shell at http://localhost:5000
 - Navigate to standalone microfrontend at http://localhost:3000
 
