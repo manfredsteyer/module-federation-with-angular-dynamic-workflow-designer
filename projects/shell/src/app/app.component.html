@@ -4,9 +4,16 @@
     <li><a (click)="toggle()">Toggle Config</a></li>
 </ul>
 
-<div class="vertical-menu">
-    <a href="#" class="active">Tasks</a>
-    <a *ngFor="let p of plugins" (click)="add(p)">Add {{p.displayName}}</a>
+<div class="left-bar">
+    <div class="vertical-menu">
+        <a href="#" class="active">Tasks</a>
+        <a *ngFor="let p of taskPlugins" (click)="add(p)">Add {{p.displayName}}</a>
+    </div>
+
+    <div class="vertical-menu">
+        <a href="#" class="active">Actions</a>
+        <a *ngFor="let p of actionPlugins" (click)="execute(p)">{{p.displayName}}</a>
+    </div>
 </div>
 
 <ng-container *ngFor="let p of workflow; let last = last">

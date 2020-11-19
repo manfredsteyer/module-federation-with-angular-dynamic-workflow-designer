@@ -10,6 +10,7 @@ export class LookupService {
                 remoteName: 'mfe1',
                 exposedModule: './Download',
 
+                type: 'task',
                 displayName: 'Download',
                 componentName: 'DownloadComponent'
             },
@@ -18,14 +19,25 @@ export class LookupService {
                 remoteName: 'mfe1',
                 exposedModule: './Upload',
 
+                type: 'task',
                 displayName: 'Upload',
                 componentName: 'UploadComponent'
+            },
+            {
+                remoteEntry: 'http://localhost:3000/remoteEntry.js',
+                remoteName: 'mfe1',
+                exposedModule: './Commit',
+
+                type: 'action',
+                displayName: 'Commit',
+                componentName: 'CommitComponent'
             },
             {
                 remoteEntry: 'http://localhost:3001/remoteEntry.js',
                 remoteName: 'mfe2',
                 exposedModule: './Analyze',
 
+                type: 'task',
                 displayName: 'Analyze',
                 componentName: 'AnalyzeComponent'
             },
@@ -34,6 +46,7 @@ export class LookupService {
                 remoteName: 'mfe2',
                 exposedModule: './Enrich',
 
+                type: 'task',
                 displayName: 'Enrich',
                 componentName: 'EnrichComponent'
             }

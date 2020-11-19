@@ -1,6 +1,9 @@
 import { PluginOptions } from './plugins/plugin';
 import { Component, OnInit } from '@angular/core';
 import { LookupService } from './plugins/lookup.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ActionProxyComponent } from './plugins/action-proxy/action-proxy.component';
+import { Workflow } from './model/workflow.model';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +11,40 @@ import { LookupService } from './plugins/lookup.service';
 })
 export class AppComponent implements OnInit {
 
-  plugins: PluginOptions[] = [];
+  taskPlugins: PluginOptions[] = [];
+  actionPlugins: PluginOptions[] = [];
+
   workflow: PluginOptions[] = [];
   showConfig = false;
 
   constructor(
-    private lookupService: LookupService) {
+    private lookupService: LookupService,
+    private dialog: MatDialog) {
   }
 
   async ngOnInit(): Promise<void> {
-    this.plugins = await this.lookupService.lookup();
+    this.taskPlugins = (await this.lookupService.lookup()).filter(p => p.type === 'task');
+    this.actionPlugins = (await this.lookupService.lookup()).filter(p => p.type === 'action');
   }
 
   add(plugin: PluginOptions): void {
     this.workflow.push(plugin);
+  }
+
+  execute(plugin: PluginOptions): void {
+
+    const workflow:Workflow = {
+      name: "DEMO",
+      creationDate: new Date(),
+    };
+
+    const dialogRef = this.dialog.open(ActionProxyComponent, {
+      width: '250px',
+      data: {title: plugin.displayName, options: plugin, context: workflow }
+    });
+
+    dialogRef.afterClosed().subscribe();
+    
   }
 
   toggle(): void {

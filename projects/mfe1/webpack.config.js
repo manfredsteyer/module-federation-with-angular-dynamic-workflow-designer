@@ -14,7 +14,8 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         './Download': './projects/mfe1/src/app/download.component.ts',
-        './Upload': './projects/mfe1/src/app/upload.component.ts'
+        './Upload': './projects/mfe1/src/app/upload.component.ts',
+        './Commit': './projects/mfe1/src/app/commit.component.ts'
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true }, 
