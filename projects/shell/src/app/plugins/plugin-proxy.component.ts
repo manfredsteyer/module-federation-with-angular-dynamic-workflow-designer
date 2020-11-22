@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, ViewChild, ViewContainerRef, ComponentFactoryResolver, Injector, Type } from '@angular/core';
-import { loadRemoteModule } from '../../federation-utils';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { PluginOptions } from './plugin';
 
 @Component({

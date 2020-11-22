@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { loadRemoteModule } from '../federation-utils';
+//import { loadRemoteModule } from '@angular-architects/module-federation';
 import { ConfigComponent } from './config/config.component';
 
 export const APP_ROUTES: Routes = [
