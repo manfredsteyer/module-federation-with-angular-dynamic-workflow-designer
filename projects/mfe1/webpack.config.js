@@ -21,7 +21,7 @@ module.exports = {
         "@angular/core": { singleton: true, strictVersion: true }, 
         "@angular/common": { singleton: true, strictVersion: true }, 
         "@angular/router": { singleton: true, strictVersion: true },
-        "shared-lib": { singleton: true, strictVersion: true }
+        "shared-lib": { singleton: true, strictVersion: true, import: "dist/shared-lib" }
       }
     }),
   ],

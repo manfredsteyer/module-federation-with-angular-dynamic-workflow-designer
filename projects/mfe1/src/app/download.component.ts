@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedLibService } from 'shared-lib';
 
 @Component({
     selector: 'mfe1-download',
@@ -11,7 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DownloadComponent implements OnInit {
-    constructor() { }
+    constructor(
+        private sharedLibService: SharedLibService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log("Shared State - Mfe1 ",  this.sharedLibService.state);
+     }
 }

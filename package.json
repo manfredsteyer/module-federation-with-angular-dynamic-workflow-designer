@@ -6,11 +6,13 @@
     "start:shell": "ng serve shell  -o",
     "start:mfe1": "ng serve mfe1 -o",
     "start:mfe2": "ng serve mfe2 -o",
+    "start:shared-lib": "ng build shared-lib --watch",
     "build:shell": "ng build shell --prod",
     "build:mfe1": "ng build mfe1 --prod",
     "build:mfe2": "ng build mfe2 --prod",
+    "build:shared-lib": "ng build shared-lib --prod",
     "start": "concurrently \"npm run start:shell\" \"npm run start:mfe1\" \"npm run start:mfe2\" ",
-    "build": "npm run build:shell && npm run build:mfe1 && npm run build:mfe2",
+    "build": "npm run build:shared-lib && npm run build:shell && npm run build:mfe1 && npm run build:mfe2",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -35,6 +37,9 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
+  },
+  "peerDependencies": {
+    "shared-lib": "~0.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1100.0",

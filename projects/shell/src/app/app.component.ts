@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { LookupService } from './plugins/lookup.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActionProxyComponent } from './plugins/action-proxy/action-proxy.component';
-import { Workflow } from 'shared-lib';
+import { SharedLibService, Workflow } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +18,14 @@ export class AppComponent implements OnInit {
   showConfig = false;
 
   constructor(
+    private sharedLibService: SharedLibService,
     private lookupService: LookupService,
     private dialog: MatDialog) {
   }
 
   async ngOnInit(): Promise<void> {
+    this.sharedLibService.inc();
+    console.log("Shared State - Shell ",  this.sharedLibService.state);
     this.taskPlugins = (await this.lookupService.lookup()).filter(p => p.type === 'task');
     this.actionPlugins = (await this.lookupService.lookup()).filter(p => p.type === 'action');
   }

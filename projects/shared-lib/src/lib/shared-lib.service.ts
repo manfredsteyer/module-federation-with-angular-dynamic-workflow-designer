@@ -5,5 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class SharedLibService {
 
+  state:number = 0;
+
   constructor() { }
+
+  inc() {
+    this.state++;
+  }
 }
