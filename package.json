@@ -11,7 +11,7 @@
     "build:mfe1": "ng build mfe1 --prod",
     "build:mfe2": "ng build mfe2 --prod",
     "build:shared-lib": "ng build shared-lib --prod",
-    "start": "concurrently \"npm run start:shell\" \"npm run start:mfe1\" \"npm run start:mfe2\" ",
+    "start": "ng build shared-lib && concurrently \"npm run start:shell\" \"npm run start:mfe1\" \"npm run start:mfe2\" ",
     "build": "npm run build:shared-lib && npm run build:shell && npm run build:mfe1 && npm run build:mfe2",
     "test": "ng test",
     "lint": "ng lint",

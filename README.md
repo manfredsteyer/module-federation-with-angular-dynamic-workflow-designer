@@ -17,7 +17,11 @@ Demonstrates webpack 5 Module Federation with Angular and the Angular Router.
 - ``npm run build``
 - ``npm run start``
 - Navigate to shell at http://localhost:5000
-- Navigate to standalone microfrontend at http://localhost:3000
+- Navigate to standalone microfrontends at http://localhost:3000 and http://localhost:3001
+
+To work on __shared-lib__ code you may want to run its build in watch mode, in a separate bash
+
+``npm run start:shared-lib``
 
 ## Disclaimer
 
