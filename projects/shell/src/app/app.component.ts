@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { LookupService } from './plugins/lookup.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActionProxyComponent } from './plugins/action-proxy/action-proxy.component';
-import { Workflow } from './model/workflow.model';
+import { Workflow } from 'shared-lib';
 
 @Component({
   selector: 'app-root',

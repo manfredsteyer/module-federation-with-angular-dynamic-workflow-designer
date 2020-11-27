@@ -1,8 +1,8 @@
-import { Component, ComponentFactoryResolver, ComponentRef, Inject, Injector, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, Inject, Injector, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { loadRemoteModule } from 'projects/shell/src/federation-utils';
-import { Workflow } from '../../model/workflow.model';
-import { ActionComponent, PluginOptions } from '../plugin';
+import { ActionComponent, Workflow } from 'shared-lib';
+import { PluginOptions } from '../plugin';
 
 @Component({
   selector: 'action-proxy',

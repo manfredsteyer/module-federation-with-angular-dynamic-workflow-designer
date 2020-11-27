@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Workflow } from 'projects/shell/src/app/model/workflow.model';
+import { ActionComponent, Workflow } from 'shared-lib';
 
 @Component({
     selector: 'mfe1-commit',
@@ -10,7 +10,7 @@ import { Workflow } from 'projects/shell/src/app/model/workflow.model';
     `
 })
 
-export class CommitComponent implements OnInit { // implements ActionComponent
+export class CommitComponent implements ActionComponent, OnInit { // implements ActionComponent
 
     @Input() context: Workflow; 
 
