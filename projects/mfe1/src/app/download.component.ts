@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'mfe1-download',
@@ -11,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DownloadComponent implements OnInit {
-    constructor() { }
+    constructor(private http: HttpClient) { 
+        console.debug('http', http);
+    }
 
-    ngOnInit() { }
+    ngOnInit() {}
 }

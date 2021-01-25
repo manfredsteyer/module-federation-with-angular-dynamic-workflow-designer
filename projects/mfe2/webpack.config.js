@@ -18,7 +18,8 @@ module.exports = {
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true }, 
-        "@angular/common": { singleton: true, strictVersion: true }, 
+        "@angular/common/http": { singleton: true, strictVersion: true }, 
+        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: '11.0.0' }, 
         "@angular/router": { singleton: true, strictVersion: true }
       }
     }),

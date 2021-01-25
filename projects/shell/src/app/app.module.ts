@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { ConfigComponent } from './config/config.component';
 import { PluginProxyComponent } from './plugins/plugin-proxy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
