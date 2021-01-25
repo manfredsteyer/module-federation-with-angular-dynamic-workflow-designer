@@ -21,12 +21,18 @@ export class PluginProxyComponent implements OnChanges {
     async ngOnChanges() {
         this.viewContainer.clear();
 
-        const component = await loadRemoteModule(this.options)
+        const Component = await loadRemoteModule(this.options)
             .then(m => m[this.options.componentName]);
 
-        const factory = this.cfr.resolveComponentFactory(component);
+        // Ivy --> ViewEngine
+        const factory = this.cfr.resolveComponentFactory(Component);
 
-        this.viewContainer.createComponent(factory, null, this.injector);
+        // const compRef = this.viewContainer.createComponent(factory, null, this.injector);
+        // const compInstance = compRef.instance;
+        // compInstance.a = 'xx'
+        // compInstance.onChange.subscribe(...)
+        // compInstance.m();
+
     }
 }
 
