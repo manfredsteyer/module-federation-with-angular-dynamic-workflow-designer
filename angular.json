@@ -349,8 +349,6 @@
       }
     }
   },
-  "defaultProject": "shell",
-  "cli": {
-    "packageManager": "yarn"
-  }
+  "defaultProject": "shell"
+ 
 }

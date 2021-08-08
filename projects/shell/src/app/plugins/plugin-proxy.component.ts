@@ -26,8 +26,8 @@ export class PluginProxyComponent implements OnChanges {
 
         // Ivy --> ViewEngine
         const factory = this.cfr.resolveComponentFactory(Component);
-
-        // const compRef = this.viewContainer.createComponent(factory, null, this.injector);
+        const compRef = this.viewContainer.createComponent(factory, null, this.injector);
+  
         // const compInstance = compRef.instance;
         // compInstance.a = 'xx'
         // compInstance.onChange.subscribe(...)
