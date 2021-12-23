@@ -12,9 +12,7 @@ export class PluginProxyComponent implements OnChanges {
     @ViewChild('placeHolder', { read: ViewContainerRef, static: true })
     viewContainer: ViewContainerRef;
 
-    constructor(
-      private injector: Injector,
-      private cfr: ComponentFactoryResolver) { }
+    constructor() { }
 
     @Input() options: PluginOptions;
 
@@ -25,8 +23,7 @@ export class PluginProxyComponent implements OnChanges {
             .then(m => m[this.options.componentName]);
 
         // Ivy --> ViewEngine
-        const factory = this.cfr.resolveComponentFactory(Component);
-        const compRef = this.viewContainer.createComponent(factory, null, this.injector);
+        const compRef = this.viewContainer.createComponent(Component);
   
         // const compInstance = compRef.instance;
         // compInstance.a = 'xx'

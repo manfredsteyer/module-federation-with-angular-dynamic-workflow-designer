@@ -6,32 +6,32 @@ export class LookupService {
     lookup(): Promise<PluginOptions[]> {
         return Promise.resolve([
             {
+                type: 'module',
                 remoteEntry: 'http://localhost:3000/remoteEntry.js',
-                remoteName: 'mfe1',
                 exposedModule: './Download',
 
                 displayName: 'Download',
                 componentName: 'DownloadComponent'
             },
             {
+                type: 'module',
                 remoteEntry: 'http://localhost:3000/remoteEntry.js',
-                remoteName: 'mfe1',
                 exposedModule: './Upload',
 
                 displayName: 'Upload',
                 componentName: 'UploadComponent'
             },
             {
+                type: 'module',
                 remoteEntry: 'http://localhost:3001/remoteEntry.js',
-                remoteName: 'mfe2',
                 exposedModule: './Analyze',
 
                 displayName: 'Analyze',
                 componentName: 'AnalyzeComponent'
             },
             {
+                type: 'module',
                 remoteEntry: 'http://localhost:3001/remoteEntry.js',
-                remoteName: 'mfe2',
                 exposedModule: './Enrich',
 
                 displayName: 'Enrich',
