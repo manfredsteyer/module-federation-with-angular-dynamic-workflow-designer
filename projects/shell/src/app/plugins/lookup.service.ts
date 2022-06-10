@@ -7,7 +7,7 @@ export class LookupService {
         return Promise.resolve([
             {
                 type: 'module',
-                remoteEntry: 'http://localhost:3000/remoteEntry.js',
+                remoteEntry: 'http://localhost:4201/remoteEntry.js',
                 exposedModule: './Download',
 
                 displayName: 'Download',
@@ -15,7 +15,7 @@ export class LookupService {
             },
             {
                 type: 'module',
-                remoteEntry: 'http://localhost:3000/remoteEntry.js',
+                remoteEntry: 'http://localhost:4201/remoteEntry.js',
                 exposedModule: './Upload',
 
                 displayName: 'Upload',
@@ -23,7 +23,7 @@ export class LookupService {
             },
             {
                 type: 'module',
-                remoteEntry: 'http://localhost:3001/remoteEntry.js',
+                remoteEntry: 'http://localhost:4202/remoteEntry.js',
                 exposedModule: './Analyze',
 
                 displayName: 'Analyze',
@@ -31,7 +31,7 @@ export class LookupService {
             },
             {
                 type: 'module',
-                remoteEntry: 'http://localhost:3001/remoteEntry.js',
+                remoteEntry: 'http://localhost:4202/remoteEntry.js',
                 exposedModule: './Enrich',
 
                 displayName: 'Enrich',

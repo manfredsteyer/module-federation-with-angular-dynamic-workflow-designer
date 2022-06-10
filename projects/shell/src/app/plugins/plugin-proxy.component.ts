@@ -3,6 +3,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { PluginOptions } from './plugin';
 
 @Component({
+    standalone: true,
     selector: 'plugin-proxy',
     template: `
         <ng-container #placeHolder></ng-container>
@@ -22,14 +23,7 @@ export class PluginProxyComponent implements OnChanges {
         const Component = await loadRemoteModule(this.options)
             .then(m => m[this.options.componentName]);
 
-        // Ivy --> ViewEngine
-        const compRef = this.viewContainer.createComponent(Component);
-  
-        // const compInstance = compRef.instance;
-        // compInstance.a = 'xx'
-        // compInstance.onChange.subscribe(...)
-        // compInstance.m();
-
+        this.viewContainer.createComponent(Component);
     }
 }
 

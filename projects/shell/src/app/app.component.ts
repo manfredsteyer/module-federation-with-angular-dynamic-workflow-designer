@@ -1,8 +1,17 @@
 import { PluginOptions } from './plugins/plugin';
 import { Component, OnInit } from '@angular/core';
 import { LookupService } from './plugins/lookup.service';
+import { ConfigComponent } from './config/config.component';
+import { PluginProxyComponent } from './plugins/plugin-proxy.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [
+    ConfigComponent,
+    PluginProxyComponent,
+    CommonModule,
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
