@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AiAnalyzeComponent } from './ai-analyze.component';
 import { AnalyzeComponent } from './analyze.component';
 import { EnrichComponent } from './enrich.component';
 
@@ -6,7 +7,8 @@ import { EnrichComponent } from './enrich.component';
   standalone: true,
   imports: [
     AnalyzeComponent,
-    EnrichComponent
+    EnrichComponent,
+    AiAnalyzeComponent,
   ],
   selector: 'app-root',
   templateUrl: 'app.component.html'

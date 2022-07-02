@@ -6,7 +6,9 @@ module.exports = withModuleFederationPlugin({
 
   exposes: {
     './Analyze': './projects/mfe2/src/app/analyze.component.ts',
-    './Enrich': './projects/mfe2/src/app/enrich.component.ts'
+    './Enrich': './projects/mfe2/src/app/enrich.component.ts',
+    './AiAnalyze': './projects/mfe2/src/app/ai-analyze.component.ts'
+
   },
 
   shared: {
